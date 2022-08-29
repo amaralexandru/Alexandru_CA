@@ -14,36 +14,13 @@
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
   <!-- Custom Styling -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Register</title>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <h1 class="logo-text"><span>Simply</span>Creative</h1>
-    </div>
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <!-- <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li> -->
-      <li>
-        <a href="#">
-          <i class="fa fa-user"></i>
-          SimplyCreative
-          <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-        </a>
-        <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#" class="logout">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </header>
+    <?php include("app/includes/header.php"); ?>
 
   <div class="auth-content">
 
@@ -73,7 +50,7 @@
       <div>
         <button type="submit" name="register-btn" class="btn btn-big">Register</button>
       </div>
-      <p>Or <a href="login.html">Sign In</a></p>
+      <p>Or <a href="login.php">Sign In</a></p>
     </form>
 
   </div>
@@ -83,7 +60,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Custom Script -->
-  <script src="js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 
 </body>
 

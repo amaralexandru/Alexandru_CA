@@ -1,3 +1,4 @@
+<?php include('path.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,39 +15,14 @@
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
   <!-- Custom Styling -->
-  <link rel="stylesheet" href=" ../../../../css/style.css">
-
-    <!-- Admin Styling -->
-    <link rel="stylesheet" href=" ../../../../css/admin.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Blog</title>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <h1 class="logo-text"><span>Simply</span>Creative</h1>
-    </div>
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <!-- <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li> -->
-      <li>
-        <a href="#">
-          <i class="fa fa-user"></i>
-          SimplyCreative
-          <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-        </a>
-        <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#" class="logout">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </header>
+    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+
 
   <!-- Page Wrapper -->
   <div class="page-wrapper">
@@ -60,7 +36,7 @@
       <div class="post-wrapper">
 
         <div class="post">
-          <img src="/assets/images/image_1.png" alt="" class="slider-image">
+          <img src="assets/images/img1.JPG" alt="" class="slider-image">
           <div class="post-info">
             <h4><a href="single.html">Why I Almost Never Say: “We Can’t Afford That”</a></h4>
             <i class="far fa-user"> Andrea Dekker</i>
@@ -70,7 +46,7 @@
         </div>
 
         <div class="post">
-          <img src="/assets/images/image_1.png" alt="" class="slider-image">
+          <img src="assets/images/img2.JPG" alt="" class="slider-image">
           <div class="post-info">
             <h4><a href="single.html">5 Ways to Beat Burnout</a></h4>
             <i class="far fa-user"> Abby Lawson</i>
@@ -80,7 +56,7 @@
         </div>
 
         <div class="post">
-          <img src="/assets/images/image_1.png" alt="" class="slider-image">
+          <img src="assets/images/img3.JPG" alt="" class="slider-image">
           <div class="post-info">
             <h4><a href="single.html">How I Stick to My Fitness Goals</a></h4>
             <i class="far fa-user"> Jason Muller</i>
@@ -90,7 +66,7 @@
         </div>
 
         <div class="post">
-          <img src="/assets/images/image_1.png" alt="" class="slider-image">
+          <img src="assets/images/img4.JPG" alt="" class="slider-image">
           <div class="post-info">
             <h4><a href="single.html">The One Reason You Won’t Reach Your Goals This Year</a></h4>
             <i class="far fa-user"> Jennifer Lorance</i>
@@ -100,7 +76,7 @@
         </div>
 
         <div class="post">
-          <img src="/assets/images/image_1.png" alt="" class="slider-image">
+          <img src="assets/images/img5.JPG" alt="" class="slider-image">
           <div class="post-info">
             <h4><a href="single.html">10 Brilliant Strategies that Can Help You Accomplish a Big Goal</a></h4>
             <i class="far fa-user"> Nic Brophy</i>
@@ -123,27 +99,26 @@
         <h1 class="recent-post-title">Recent Posts</h1>
 
         <div class="post clearfix">
-          <img src="images/image_3" alt="" class="post-image">
+          <img src="assets/images/image_3.png" alt="" class="post-image">
           <div class="post-preview">
-            <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
-            <i class="far fa-user"> SimplyCreative</i>
+            <h2><a href="single.html">The Simple Technique that Helps Me Be Insanely Productive Every Single Day</a></h2>
+            <i class="far fa-user"> Mark Brosky</i>
             &nbsp;
-            <i class="far fa-calendar"> Mar 11, 2019</i>
+            <i class="far fa-calendar"> Aug 28, 2022</i>
             <p class="preview-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Exercitationem optio possimus a inventore maxime laborum.
+              I’ve talked about this technique on the blog before, but I think it’s helpful to bring it up again at this time of year. Because maybe, just maybe, it will be the thing that will help you be productive all year long, not just at the beginning of the school year.
             </p>
             <a href="single.html" class="btn read-more">Read More</a>
           </div>
         </div>
 
         <div class="post clearfix">
-          <img src="images/image_4.png" alt="" class="post-image">
+          <img src="assets/images/image_4.png" alt="" class="post-image">
           <div class="post-preview">
-            <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
+            <h2><a href="single.html">10 Easy, Family-Approved Zucchini Recipes</a></h2>
             <i class="far fa-user"> SimplyCreative</i>
             &nbsp;
-            <i class="far fa-calendar"> Mar 11, 2019</i>
+            <i class="far fa-calendar"> Aug 27, 2022</i>
             <p class="preview-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Exercitationem optio possimus a inventore maxime laborum.
@@ -152,12 +127,12 @@
           </div>
         </div>
         <div class="post clearfix">
-          <img src="images/image_3.png" alt="" class="post-image">
+          <img src="assets/images/image_5.png" alt="" class="post-image">
           <div class="post-preview">
             <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
             <i class="far fa-user"> SimplyCreative</i>
             &nbsp;
-            <i class="far fa-calendar"> Mar 11, 2019</i>
+            <i class="far fa-calendar"> Aug 26, 2022</i>
             <p class="preview-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Exercitationem optio possimus a inventore maxime laborum.
@@ -166,12 +141,12 @@
           </div>
         </div>
         <div class="post clearfix">
-          <img src="images/image_3.png" alt="" class="post-image">
+          <img src="assets/images/image_6" alt="" class="post-image">
           <div class="post-preview">
             <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
             <i class="far fa-user"> SimplyCreative</i>
             &nbsp;
-            <i class="far fa-calendar"> Mar 11, 2019</i>
+            <i class="far fa-calendar"> Aug 25, 2022</i>
             <p class="preview-text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Exercitationem optio possimus a inventore maxime laborum.
@@ -214,64 +189,8 @@
   </div>
   <!-- // Page Wrapper -->
 
-  <!-- footer -->
-  <div class="footer">
-    <div class="footer-content">
-
-      <div class="footer-section about">
-        <h1 class="logo-text"><span>Simply</span>Creative</h1>
-
-        <div class="contact">
-          <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
-          <span><i class="fas fa-envelope"></i> &nbsp; info@simplycreative.com</span>
-        </div>
-        <div class="socials">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section links">
-        <h2>Quick Links</h2>
-        <br>
-        <ul>
-          <a href="#">
-            <li>Events</li>
-          </a>
-          <a href="#">
-            <li>Team</li>
-          </a>
-          <a href="#">
-            <li>Mentores</li>
-          </a>
-          <a href="#">
-            <li>Gallery</li>
-          </a>
-          <a href="#">
-            <li>Terms and Conditions</li>
-          </a>
-        </ul>
-      </div>
-
-      <div class="footer-section contact-form">
-        <h2>Contact us</h2>
-        <br>
-        <form action="index.html" method="post">
-          <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-          <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-          <button type="submit" class="btn btn-big contact-btn">
-            <i class="fas fa-envelope"></i>
-            Send
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-  </div>
-  <!-- // footer -->
+  <!-- Footer -->
+    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
   <!-- JQuery -->
@@ -281,7 +200,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <!-- Custom Script -->
-  <script src="js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 
 </body>
 

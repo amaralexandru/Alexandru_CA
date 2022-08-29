@@ -1,3 +1,4 @@
+<?php include('path.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,36 +15,13 @@
   <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
   <!-- Custom Styling -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Single Post</title>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <h1 class="logo-text"><span>Simply</span>Creative</h1>
-    </div>
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <!-- <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Login</a></li> -->
-      <li>
-        <a href="#">
-          <i class="fa fa-user"></i>
-          SimplyCreative
-          <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-        </a>
-        <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#" class="logout">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </header>
+  <?php include(ROOT_PATH . "/app/includes/header.php"); ?>   
 
   <!-- Page Wrapper -->
   <div class="page-wrapper">
@@ -115,31 +93,31 @@
           <h2 class="section-title">Popular</h2>
 
           <div class="post clearfix">
-            <img src="images/image_1.png" alt="">
+            <img src="assets/images/image_1.png" alt="">
             <a href="" class="title">
               <h4>How to overcome your fears</h4>
             </a>
           </div>
           <div class="post clearfix">
-            <img src="images/image_1.png" alt="">
+            <img src="assets/images/image_1.png" alt="">
             <a href="" class="title">
               <h4>How to overcome your fears</h4>
             </a>
           </div>
           <div class="post clearfix">
-            <img src="images/image_1.png" alt="">
+            <img src="assets/images/image_1.png" alt="">
             <a href="" class="title">
               <h4>How to overcome your fears</h4>
             </a>
           </div>
           <div class="post clearfix">
-            <img src="images/image_1.png" alt="">
+            <img src="assets/images/image_1.png" alt="">
             <a href="" class="title">
               <h4>How to overcome your fears</h4>
             </a>
           </div>
           <div class="post clearfix">
-            <img src="images/image_1.png" alt="">
+            <img src="assets/images/image_1.png" alt="">
             <a href="" class="title">
               <h4>How to overcome your fears</h4>
             </a>
@@ -169,63 +147,7 @@
   <!-- // Page Wrapper -->
 
   <!-- footer -->
-  <div class="footer">
-    <div class="footer-content">
-
-      <div class="footer-section about">
-        <h1 class="logo-text"><span>Simply</span>Creative</h1>
-
-        <div class="contact">
-          <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
-          <span><i class="fas fa-envelope"></i> &nbsp; info@simplycreative.com</span>
-        </div>
-        <div class="socials">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section links">
-        <h2>Quick Links</h2>
-        <br>
-        <ul>
-          <a href="#">
-            <li>Events</li>
-          </a>
-          <a href="#">
-            <li>Team</li>
-          </a>
-          <a href="#">
-            <li>Mentores</li>
-          </a>
-          <a href="#">
-            <li>Gallery</li>
-          </a>
-          <a href="#">
-            <li>Terms and Conditions</li>
-          </a>
-        </ul>
-      </div>
-
-      <div class="footer-section contact-form">
-        <h2>Contact us</h2>
-        <br>
-        <form action="index.html" method="post">
-          <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-          <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-          <button type="submit" class="btn btn-big contact-btn">
-            <i class="fas fa-envelope"></i>
-            Send
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-
-  </div>
+    <?php include(ROOT_PATH . "app/includes/footer.php"); ?>
   <!-- // footer -->
 
 
@@ -236,7 +158,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <!-- Custom Script -->
-  <script src="js/scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 
 </body>
 
