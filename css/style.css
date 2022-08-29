@@ -35,7 +35,7 @@
   
   .btn {
     padding: .5rem 1rem;
-    background: #006669;
+    background: #034794;
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
@@ -50,7 +50,7 @@
   
   .btn:hover {
     color: white !important;
-    background: #55004a;
+    background: #000a0a;
   }
   
   .text-input {
@@ -176,7 +176,7 @@
   }
   
   .page-wrapper a:hover {
-    color: #006669;
+    color: #000808;
   }
   
   /* POST SLIDER */
@@ -195,7 +195,7 @@
     top: 50%;
     right: 30px;
     font-size: 2em;
-    color: #006669;
+    color: #000d0e;
     cursor: pointer;
   }
   
@@ -423,7 +423,7 @@
   }
   
   .footer .footer-content .about h1 span {
-    color: #3a12a8;
+    color: #091d91;
   }
   
   .footer .footer-content .about .contact span {
@@ -558,7 +558,7 @@
   
     header ul {
       width: 100%;
-      background: #0E94A0;
+      background: #012044;
       max-height: 0px;
       overflow: hidden;
     }
@@ -579,7 +579,7 @@
   
     header ul li ul li a {
       padding: 10px;
-      background: #0E94A0;
+      background: #012044;
       color: white;
       padding-left: 50px;
     }
