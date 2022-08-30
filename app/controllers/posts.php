@@ -2,6 +2,7 @@
 
 include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validatePost.php");
+include(ROOT_PATH . "/app/helpers/middleware.php");
 
 $table = 'posts';
 
@@ -18,6 +19,7 @@ $published = "";
 
 // delete a post
 if (isset($_GET['delete_id'])){
+    adminOnly();
     $count = delete($table, $_GET['delete_id']);
     $_SESSION['messege'] = 'Post deleted successfully';
     $_SESSION['type'] = 'Success';
@@ -26,6 +28,7 @@ if (isset($_GET['delete_id'])){
 }
 // updating the publish filed 
 if (isset($_GET['published']) && isset($_GET['p_id'])) {
+    adminOnly();
     $published = $_GET['published'];
     $p_id = $_GET['p_id'];
     $count = update($table, $p_id, ['published' => $published]);
@@ -47,6 +50,7 @@ if (isset($_GET['id'])){
 
 // add post
 if (isset($_POST['add-post'])) {
+    adminOnly();
     $errors = validatePost($_POST);
 
     if (!empty($_FILES['image']['name'])) {
