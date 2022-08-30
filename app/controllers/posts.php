@@ -16,6 +16,7 @@ $body = "";
 $topic_id = "";
 $published = "";
 
+// delete a post
 if (isset($_GET['delete_id'])){
     $count = delete($table, $_GET['delete_id']);
     $_SESSION['messege'] = 'Post deleted successfully';
@@ -23,6 +24,17 @@ if (isset($_GET['delete_id'])){
     header("location: " . BASE_URL . "/admin/posts/index.php");
     exit();
 }
+// updating the publish filed 
+if (isset($_GET['published']) && isset($_GET['p_id'])) {
+    $published = $_GET['published'];
+    $p_id = $_GET['p_id'];
+    $count = update($table, $p_id, ['published' => $published]);
+    $_SESSION['message'] = "Post published state changed!";
+    $_SESSION['type'] = "success";
+    header("location: " . BASE_URL . "/admin/posts/index.php"); 
+    exit();
+}
+
 
 if (isset($_GET['id'])){
     $post = selectOne($table, ['id' => $_GET['id']]);
@@ -33,7 +45,7 @@ if (isset($_GET['id'])){
     $published = $post['published'];
 }
 
-
+// add post
 if (isset($_POST['add-post'])) {
     $errors = validatePost($_POST);
 
@@ -74,6 +86,7 @@ if (isset($_POST['add-post'])) {
     }
 
 }
+// update post
 if (isset($_POST['update-post'])) {
     $errors = validatePost($_POST);
 

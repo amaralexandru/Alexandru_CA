@@ -19,14 +19,26 @@ function validateUser($user)
     if ($user['passwordConf'] !== $user['password']) {
         array_push($errors, 'Password do not match');
     }
-    // selecting record from the database that has the same email and compare with what the isuer is providing 
-    $existingUser =selectOne('users', ['email' => $user['email']]);
-    if (isset($existingUser)) {
-        array_push($errors, 'Email already exists');
+
+    // $existingUser = selectOne('users', ['email' => $user['email']]);
+    // if ($existingUser) {
+    //     array_push($errors, 'Email already exists');
+    // }
+
+    $existingUser = selectOne('users', ['email' => $user['email']]);
+    if ($existingUser) {
+        if (isset($user['update-user']) && $existingUser['id'] != $user['id']) {
+            array_push($errors, 'Email already exists');
+        }
+
+        if (isset($user['create-admin'])) {
+            array_push($errors, 'Email already exists');
+        }
     }
 
     return $errors;
 }
+
 
 function validateLogin($user)
 {
