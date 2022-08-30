@@ -19,6 +19,7 @@ function validateUser($user)
     if ($user['passwordConf'] !== $user['password']) {
         array_push($errors, 'Password do not match');
     }
+    // selecting record from the database that has the same email and compare with what the isuer is providing 
     $existingUser =selectOne('users', ['email' => $user['email']]);
     if (isset($existingUser)) {
         array_push($errors, 'Email already exists');

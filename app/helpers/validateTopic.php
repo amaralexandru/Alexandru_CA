@@ -8,7 +8,7 @@ function validateTopic($topic)
         array_push($errors, 'Name is required');
     }
     $existingTopic =selectOne('topics', ['name' => $topic['name']]);
-    if (isset($existingTopic)) {
+    if ($existingTopic) {
         array_push($errors, 'Name already in use');
     }
 
