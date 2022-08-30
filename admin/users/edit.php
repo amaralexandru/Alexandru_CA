@@ -1,6 +1,7 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/users.php");?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,20 +26,17 @@
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Edit Users</title>
+        <title>Admin Section - Edit User</title>
     </head>
 
     <body>
-        <?php include(ROOT_PATH . "/app/includes/adminHeader.php"); ?>
-
+        
+    <?php include(ROOT_PATH . "/app/includes/adminHeader.php"); ?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper">
 
-            <!-- Left Sidebar -->
         <?php include(ROOT_PATH . "/app/includes/adminSidebar.php"); ?>
-
-            <!-- // Left Sidebar -->
 
 
             <!-- Admin Content -->
@@ -96,7 +94,6 @@
                 </div>
 
             </div>
-            
             <!-- // Admin Content -->
 
         </div>

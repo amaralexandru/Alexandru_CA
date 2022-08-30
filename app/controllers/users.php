@@ -1,40 +1,36 @@
-<?php 
-
+<?php
 
 include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validateUser.php");
 
+
 $table = 'users';
 
-$admin_users = selectAll($table, ['admin' => 1]);
+$admin_users = selectAll($table);
 
 $errors = array();
-$username = '';
 $id = '';
+$username = '';
 $admin = '';
 $email = '';
 $password = '';
 $passwordConf = '';
 
 
-
-
-function logingUser($user)
+function loginUser($user)
 {
     $_SESSION['id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['admin'] = $user['admin'];
-    $_SESSION['message'] = 'You are logged in';
+    $_SESSION['message'] = 'You are now logged in';
     $_SESSION['type'] = 'success';
 
     if ($_SESSION['admin']) {
-        header('location: '. BASE_URL . '/admin/dashboard.php');
-
-    }else {
-        header('location: '. BASE_URL . '/index.php');
-    }   
+        header('location: ' . BASE_URL . '/admin/dashboard.php'); 
+    } else {
+        header('location: ' . BASE_URL . '/index.php');
+    }
     exit();
-
 }
 
 if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
@@ -66,45 +62,8 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
     }
 }
 
-
-if (isset($_POST['login-btn'])){
-    $errors = validateLogin($_POST);
-
-    if (count($errors) === 0){
-        $user = selectOne($table, ['username' => $_POST['username']]);
-            // login user and redirect
-        if ($user && password_verify($_POST['password'], $user['password'])) {
-            logingUser($user);
-    
-        }else {
-            array_push($errors, 'Wrong password');
-
-        }
-    }
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-  
-}
-// delete admin user
-if (isset($_GET['delete_id'])) {
-    $count = delete($table, $_GET['delete_id']);
-    $_SESSION['message'] = 'Admin user deleted';
-    $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/users/index.php'); 
-    exit();
-}
-
-if (isset($_GET['id'])) {
-    $user = selectOne($table, ['id' => $_GET['id']]);
-    
-    $id = $user['id'];
-    $username = $user['username'];
-    $admin = $user['admin'];
-    $email = $user['email'];
-}
-
 if (isset($_POST['update-user'])) {
+    adminOnly();
     $errors = validateUser($_POST);
 
     if (count($errors) === 0) {
@@ -126,4 +85,41 @@ if (isset($_POST['update-user'])) {
         $password = $_POST['password'];
         $passwordConf = $_POST['passwordConf'];
     }
+}
+
+
+if (isset($_GET['id'])) {
+    $user = selectOne($table, ['id' => $_GET['id']]);
+    
+    $id = $user['id'];
+    $username = $user['username'];
+    $admin = $user['admin'];
+    $email = $user['email'];
+}
+
+
+if (isset($_POST['login-btn'])) {
+    $errors = validateLogin($_POST);
+
+    if (count($errors) === 0) {
+        $user = selectOne($table, ['username' => $_POST['username']]);
+
+        if ($user && password_verify($_POST['password'], $user['password'])) {
+            loginUser($user);
+        } else {
+           array_push($errors, 'Wrong credentials');
+        }
+    }
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+}
+
+if (isset($_GET['delete_id'])) {
+    adminOnly();
+    $count = delete($table, $_GET['delete_id']);
+    $_SESSION['message'] = 'Admin user deleted';
+    $_SESSION['type'] = 'success';
+    header('location: ' . BASE_URL . '/admin/users/index.php'); 
+    exit();
 }
